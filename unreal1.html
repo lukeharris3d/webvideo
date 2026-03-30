@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unreal Planess</title>
+    <title>Unreal Planes</title>
 
     <!-- Video.js CSS -->
     <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
@@ -46,9 +46,11 @@
         controls
         preload="auto"
         muted
+        autoplay
         playsinline
         data-setup='{
           "autoplay": true, 
+          "muted": true,
           "controlBar": {
             "volumePanel": false
           }
@@ -67,6 +69,11 @@
     <script>
       // Initialize the player
       var player = videojs("my-video");
+
+      // Force play as a fallback in case the browser blocks the attribute
+      player.ready(function() {
+        player.play();
+      });
     </script>
   </body>
 </html>
