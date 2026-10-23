@@ -23,7 +23,7 @@
         align-items: flex-start;
       }
 
-      /* Container for the video */
+      /* Container for positioning the video */
       .video-container {
         position: relative;
         width: 1280px;
@@ -46,15 +46,8 @@
         controls
         preload="auto"
         muted
-        autoplay
         playsinline
-        data-setup='{
-          "autoplay": true, 
-          "muted": true,
-          "controlBar": {
-            "volumePanel": false
-          }
-        }'
+        data-setup='{"autoplay": "muted"}'
       >
         <source
           src="https://lukeharris3d.github.io/webvideo/unreal1.webm"
@@ -63,8 +56,8 @@
       </video>
     </div>
 
-    <!-- Requested Minimal Video.js Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video-minimal.js"></script>
+    <!-- Video.js Library -->
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
 
     <script>
       // Initialize the player
