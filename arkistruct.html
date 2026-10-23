@@ -60,4 +60,13 @@
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
 
     <script>
-      var player = videojs("m
+      // Initialize the player
+      var player = videojs("my-video");
+
+      // Force play as a fallback in case the browser blocks the attribute
+      player.ready(function() {
+        player.play();
+      });
+    </script>
+  </body>
+</html>
